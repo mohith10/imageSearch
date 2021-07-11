@@ -1,0 +1,12 @@
+.card{
+    margin: 1%;
+    width: 18rem;
+    height: 18rem;
+    float: left;
+    overflow: hidden;
+    border: none;
+}
+.card:hover{
+    transform: scale(1.1);
+    animation-timing-function:ease-in;
+}
