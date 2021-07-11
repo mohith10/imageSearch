@@ -1,3 +1,6 @@
+/*
+Using REDUX to manage states across the apps
+*/
 import { configureStore, createSlice} from "@reduxjs/toolkit";
 
 const sliceManager = createSlice({
@@ -11,6 +14,7 @@ const sliceManager = createSlice({
   },
   reducers: {
     fetchData(state, action) {
+      //Populate the data accroding to what is passed by THUNK
       state.imageDataDump = [...state.imageDataDump,...action.payload.imageDataDump]
       state.pageNumber = action.payload.pageNumber
       state.searchQuery = action.payload.searchQuery
@@ -20,6 +24,7 @@ const sliceManager = createSlice({
             state.imageDataDump = []
     },
     notificationHandler(state,action){
+      //Hnadler error and loading state
         state.loader = action.payload.loadingState
         state.error = action.payload.errorState
     },

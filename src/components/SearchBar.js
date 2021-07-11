@@ -1,3 +1,6 @@
+/*
+Loads up the search bar section. Consisting of input feild which listens to input when the user is TYPING
+*/
 import classes from "./../static/searchbar.module.css";
 import InputGroup from "react-bootstrap/InputGroup";
 import { useDispatch } from "react-redux";
@@ -5,7 +8,7 @@ import  {fetchDataMiddleware}  from "../datastore/fetchDataMiddleware";
 import { actionSet } from "../datastore/dataStore";
 function SearchBar(props) {
   const dispatch = useDispatch()
-  function searchQueryHandler(event){
+  function searchQueryHandler(event){ //Listens to input of the user on every key stroke and make send out the data to Async THUNK i.e FetchDataMiddleware
     dispatch(actionSet.clearImageDump())
     dispatch(actionSet.notificationHandler({loadingState:true,errorState:false}))
     if(event.target.value.length>0){

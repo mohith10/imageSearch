@@ -1,3 +1,6 @@
+/*
+THUNK to get all the API actions dispatched by components, which fetches data from API and pass to reducers
+*/
 import axios from "axios";
 import { actionSet } from "./dataStore";
 export const fetchDataMiddleware = (url, pageNumber,searchQuery) => {
@@ -14,13 +17,16 @@ export const fetchDataMiddleware = (url, pageNumber,searchQuery) => {
       };
       axios(config)
         .then(function (response) {
+          //Dispatches data to reducers in dataStore.js
           dispatch(actionSet.fetchData({imageDataDump:response.data.photos.photo,pageNumber:pageNumber,searchQuery:searchQuery}));
+          //To store local Storage data for recent searches
           if(searchQuery.length >2){
             let key = 'recentSearch'+(Math.floor(Math.random()*6)+1)
             localStorage.setItem(key,searchQuery)
           }
         })
         .catch(function (error) {
+          //Erro state handlers
           dispatch(actionSet.notificationHandler({loadingState:false,errorState:true}))
         });
     };

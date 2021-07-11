@@ -1,3 +1,6 @@
+/*
+This file basically takes the data store (REDUX) and pass it down the dom tree
+*/
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
