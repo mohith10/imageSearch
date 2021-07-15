@@ -14,7 +14,7 @@ https://reactimagecrawler.herokuapp.com/
 2. Redux
 3. Async Thunk
 
-## Librares Used
+## Libraries Used
 1. @reducjs/toolkit
 2. Bootstrap
 3. Axios
