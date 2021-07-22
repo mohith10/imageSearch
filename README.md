@@ -8,7 +8,6 @@ CANVAS - Image Search application with following features:
 2. Search images and cosume via flickr https://www.flickr.com/services/api/flickr.photos.search.html API 
 
 ## Host
-
 https://reactimagecrawler.herokuapp.com/
 
 ## ReactJS Concepts Used
